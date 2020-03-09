@@ -1,0 +1,19 @@
+public class SingletonDesign implements Serializable {
+private volatile static SingletonDemo instance = null;
+public static SingletonDemo getInstance() {
+if (instance == null) {
+instance = new SingletonDemo();
+}
+return instance;
+}
+protected Object readResolve() {
+return instance;
+}
+private int i = 10;
+public int getI() {
+return i;
+}
+public void setI(int i) {
+this.i = i;
+}
+}
